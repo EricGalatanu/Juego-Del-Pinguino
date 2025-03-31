@@ -33,7 +33,7 @@ public class Dado {
 		this.tipo = tipo;
 	}
 
-	public Dado lanzar(Scanner s, Random r, Dado dadoActual) {
+	public Dado lanzar(Dado dadoActual) {
 		int tipoDado = 0;
 		String tipo = "";
 		int valor = 0;
@@ -83,5 +83,16 @@ public class Dado {
 
 		return dadoActual;
 	}
+	
+//	public static void main(String[] args) {
+//		Dado dadoActual = new Dado("", 0);
+//		
+//		dadoActual.lanzar(dadoActual);
+//		
+//		
+//		System.out.println("Tipo de dado: " + dadoActual.tipo);
+//		System.out.println("Valor del dado: " + dadoActual.valor);
+//		
+//	}
 
 }
