@@ -12,7 +12,9 @@ public class Tablero {
 		this.numeroCasillas = 50;
 		}
 
-	public void  getnumeroCasillas() {
-	return;
+	public int getNumeroCasillas() {
+		return numeroCasillas;
 	}
+
+	
 }
