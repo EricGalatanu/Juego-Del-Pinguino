@@ -37,7 +37,21 @@ public class Inventario {
 	}
 	
 	
-	
+	public void obtenerPescado(Inventario inventarioJugador) {
+
+		if (inventarioJugador.peces < 2) {
+			peces++;
+			if (inventarioJugador.peces == 1) {
+				System.out.println("Has obtenido un pez! Tienes " + peces + " pez en el inventario");
+			} else {
+				System.out.println("Has obtenido un pez! Tienes " + peces + " peces en el inventario");	
+			}
+			
+		} else {
+			System.out.println("Tienes el máximo de peces permitidos, no se ha añadido el pez al inventario.");
+		}
+
+	}
 	
 	
 	
