@@ -27,5 +27,9 @@ public class Evento {
 		this.infoEvento = infoEvento;
 	}
 	
-	
+	public void obtenerPez(Inventario inventarioJugador) {
+		inventarioJugador.obtenerPescado(inventarioJugador);
+	}
+
+
 }
