@@ -64,10 +64,19 @@ public class Inventario {
 			if(inventarioJugador.bolasDeNieve == 1) {
 				System.out.println("Has obtenido una bola de nieve! Tienes " + bolasDeNieve + " bola de nieve en el inventario");
 			} else {
-				System.out.println("Has obtenido una bola de nieve! Tienes " + bolasDeNieve + "bolas de nieve en el inventario");
+				System.out.println("Has obtenido " + generador + " bolas de nieve! Tienes " + bolasDeNieve + " bolas de nieve en el inventario");
 			}
 		} else {
 			System.out.println("Tienes el máximo de bolas de nieve permitidas, no se ha añadido la bola de nieve al inventario");
 		}
 	}
+	
+//	public static void main(String[] args) {
+//		Inventario invJugador = new Inventario(null, 2, 0);
+//		
+//		invJugador.obtenerBolasdeNieve(invJugador);
+//		
+//		System.out.println(invJugador.getBolasDeNieve());
+//	}
+
 }

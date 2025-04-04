@@ -34,4 +34,6 @@ public class Evento {
 	public void obtenerBolasDeNieve(Inventario inventarioJugador) {
 		inventarioJugador.obtenerBolasdeNieve(inventarioJugador);
 	}
+	
+	
 }
