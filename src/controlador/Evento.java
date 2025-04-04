@@ -30,6 +30,8 @@ public class Evento {
 	public void obtenerPez(Inventario inventarioJugador) {
 		inventarioJugador.obtenerPescado(inventarioJugador);
 	}
-
-
+	
+	public void obtenerBolasDeNieve(Inventario inventarioJugador) {
+		inventarioJugador.obtenerBolasdeNieve(inventarioJugador);
+	}
 }

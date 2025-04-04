@@ -6,6 +6,8 @@ public class Inventario {
 	private int peces;
 	private int bolasDeNieve;
 	
+	Random r = new Random();
+	
 	public Inventario(ArrayList<Dado> dados, int peces, int bolasDeNieve) {
 		this.dados = dados;
 		this.peces = peces;
@@ -53,9 +55,19 @@ public class Inventario {
 
 	}
 	
-	
-	
-	
-	
-	
+	public void obtenerBolasdeNieve(Inventario inventarioJugador) {
+		
+		int generador = r.nextInt(3) + 1;
+		
+		if(inventarioJugador.bolasDeNieve < 6) {
+			bolasDeNieve += generador;
+			if(inventarioJugador.bolasDeNieve == 1) {
+				System.out.println("Has obtenido una bola de nieve! Tienes " + bolasDeNieve + " bola de nieve en el inventario");
+			} else {
+				System.out.println("Has obtenido una bola de nieve! Tienes " + bolasDeNieve + "bolas de nieve en el inventario");
+			}
+		} else {
+			System.out.println("Tienes el máximo de bolas de nieve permitidas, no se ha añadido la bola de nieve al inventario");
+		}
+	}
 }
