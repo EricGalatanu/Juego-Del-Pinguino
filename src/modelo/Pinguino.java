@@ -2,18 +2,17 @@ package modelo;
 
 public class Pinguino {
 
-
 private String nombre;
 	public String color;
 	public int posicion;
-	public String inventario;
+	public Inventario inv;
 	public String tipo;
 	
-	public Pinguino (String nombre, String color, int posicion, String inventario, String tipo) {
+	public Pinguino (String nombre, String color, int posicion, Inventario inv, String tipo) {
 		this.nombre = nombre;
 		this.color = color;
-		this.posicion = posicion;
-		this.inventario = inventario;
+		this.posicion = 0;
+		this.inv = inv;
 		this.tipo = tipo;
 	}
 	
@@ -42,11 +41,11 @@ private String nombre;
 	}
 	
 	public String getInventario() {
-		return inventario;
+		return inv;
 	}
 	
-	public void setInventario(String inventario) {
-		this.inventario = inventario;
+	public void setInventario(Inventario inv) {
+		this.inv = inv;
 	}
 	
 	public String getTipo() {
@@ -56,6 +55,13 @@ private String nombre;
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-
+	
+	public void avanzar() {
+		this.posicion++;
+	}
+	
+	public void retroceder() {
+		this.posicion--;
+	}
 	
 }
