@@ -1,5 +1,8 @@
 package controlador;
 
+import pruebasPinguino.Inventario;
+import pruebasPinguino.Pinguino;
+
 public class Evento {
 
 	private int idEvento;
@@ -27,12 +30,12 @@ public class Evento {
 		this.infoEvento = infoEvento;
 	}
 	
-	public void obtenerPez(Inventario inventarioJugador) {
-		inventarioJugador.obtenerPescado(inventarioJugador);
+	public void obtenerPez(Pinguino pingu,Inventario inv) {
+		pingu.inv.obtenerPescado(inv);
 	}
-	
-	public void obtenerBolasDeNieve(Inventario inventarioJugador) {
-		inventarioJugador.obtenerBolasdeNieve(inventarioJugador);
+
+	public void obtenerBolasDeNieve(Pinguino pingu, Inventario inv) {
+		pingu.inv.obtenerBolasdeNieve(inv);
 	}
 	
 	
