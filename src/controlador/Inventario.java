@@ -4,23 +4,27 @@ import java.util.*;
 
 public class Inventario {
 
-	private ArrayList<Dado> dados;
+	private int dados;
+	private int dadosR;
+	private int dadosL;
 	private int peces;
 	private int bolasDeNieve;
 
 	Random r = new Random();
 
-	public Inventario(ArrayList<Dado> dados, int peces, int bolasDeNieve) {
+	public Inventario(int dados, int dadosR, int dadosL, int peces, int bolasDeNieve) {
 		this.dados = dados;
+		this.dadosR = dadosR;
+		this.dadosL = dadosL;
 		this.peces = peces;
 		this.bolasDeNieve = bolasDeNieve;
 	}
 
-	public ArrayList<Dado> getDados() {
+	public int getDados() {
 		return dados;
 	}
 
-	public void setDados(ArrayList<Dado> dados) {
+	public void setDados(int dados) {
 		this.dados = dados;
 	}
 
@@ -39,7 +43,23 @@ public class Inventario {
 	public void setBolasDeNieve(int bolasDeNieve) {
 		this.bolasDeNieve = bolasDeNieve;
 	}
-
+	
+	public int getDadosR() {
+		return dadosR;
+	}
+	
+	public void  setDadosR (int dadosR) {
+		this.dadosR = dadosR;
+	}
+	
+	public int getDadosL() {
+		return dadosL;
+	}
+	
+	public void setDadosL(int dadosL) {
+		this.dadosL = dadosL;
+	}
+	
 	public void obtenerPescado(Inventario inventarioJugador) {
 
 		if (inventarioJugador.peces < 2) {
@@ -96,13 +116,13 @@ public class Inventario {
 
 	}
 
-	public static void main(String[] args) {
-
-		Inventario invJugador = new Inventario(null, 2, 0);
-
-		invJugador.obtenerBolasdeNieve(invJugador);
-
-		
-	}
+//	public static void main(String[] args) {
+//
+//		Inventario invJugador = new Inventario(null, 2, 0);
+//
+//		invJugador.obtenerBolasdeNieve(invJugador);
+//
+//		
+//	}
 
 }
