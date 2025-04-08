@@ -1,8 +1,5 @@
 package controlador;
 
-import pruebasPinguino.Inventario;
-import pruebasPinguino.Pinguino;
-
 public class Evento {
 
 	private int idEvento;
