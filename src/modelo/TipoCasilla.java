@@ -83,7 +83,7 @@ public class TipoCasilla extends Casilla {
 		
 		if (inventarioJugador.peces > 1) {
 			System.out.println("¡Jugador +" + pinguino.getNombre() + "ha usado un pez para sobornar al oso!" );
-			inventarioJugador.peces--;
+			inventarioJugador.peces-=2;
 		} else {
 			pinguino.setPosicion(0);
 		}
@@ -98,7 +98,7 @@ public class TipoCasilla extends Casilla {
         this.ultimaPosicion = Posicion;
     }
 	
-	public static Pinguino accionInterrogante(Pinguino pingu) {
+	public static Pinguino accionInterrogante(Pinguino pingu,Inventario inventarioJugador) {
 	
 		Random random = new Random();
 		
@@ -115,26 +115,46 @@ public class TipoCasilla extends Casilla {
                 pingu.inv.obtenerBolasdeNieve(pingu.inv);
                 break;
             case 2:
-            	
+ 
             	if(pingu.inv.getDados() < 3) { 
             	int  dados = random.nextInt(10) + 1;
             	
             	switch (dados) {
             	case 1:
             		 System.out.println("Jugador " + pingu.getNombre() + "ha obtenido un dado rápido");
-                     pingu.inv.dadorapido++;
+                     if (inventarioJugador.dados >= 3) {
+                    	 System.out.println("No se pueden añadir más dados al inventario");
+                     } else {
+                    	 inventarioJugador.dadosR++;
+                    	 inventarioJugador.dados++;
+                     }
                      break;
             	case 2:
             		System.out.println("Jugador " + pingu.getNombre() + "ha obtenido un dado rápido");
-                    pingu.inv.dadorapido++;
+            		if (inventarioJugador.dados >= 3) {
+                   	 System.out.println("No se pueden añadir más dados al inventario");
+                    } else {
+                   	 inventarioJugador.dadosR++;
+                   	 inventarioJugador.dados++;
+                    }
                     break;
             	case 3 :
             		System.out.println("Jugador " + pingu.getNombre() + "ha obtenido un dado rápido");
-            		pingu.inv.dadorapido++;
+            		if (inventarioJugador.dados >= 3) {
+                   	 System.out.println("No se pueden añadir más dados al inventario");
+                    } else {
+                   	 inventarioJugador.dadosR++;
+                   	 inventarioJugador.dados++;
+                    }
                     break;
             	default:
             		System.out.println("Jugador " + pingu.getNombre() + "ha obtenido un dado lento");
-                    pingu.inv.dadoLento++;
+            		if (inventarioJugador.dados >= 3) {
+                   	 System.out.println("No se pueden añadir más dados al inventario");
+                    } else {
+                   	 inventarioJugador.dadosL++;
+                   	 inventarioJugador.dados++;
+                    }
                     break;
             	}
             	} else {
