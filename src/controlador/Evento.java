@@ -27,13 +27,6 @@ public class Evento {
 		this.infoEvento = infoEvento;
 	}
 	
-	public void obtenerPez(Pinguino pingu,Inventario inv) {
-		pingu.inv.obtenerPescado(inv);
-	}
 
-	public void obtenerBolasDeNieve(Pinguino pingu, Inventario inv) {
-		pingu.inv.obtenerBolasdeNieve(inv);
-	}
-	
 	
 }
