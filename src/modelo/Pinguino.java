@@ -2,9 +2,6 @@ package modelo;
 
 import java.util.Scanner;
 
-import testRepte.Inventario;
-import testRepte.Pinguino;
-
 public class Pinguino {
 
 private String nombre;
@@ -21,6 +18,14 @@ private String nombre;
 		this.posicion = 0;
 		this.inv = inv;
 		this.tipo = tipo;
+	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 	public String getNombre() {
@@ -56,6 +61,14 @@ private String nombre;
 		this.tipo = tipo;
 	}
 	
+	public Inventario getInv() {
+		return inv;
+	}
+
+	public void setInv(Inventario inv) {
+		this.inv = inv;
+	}
+	
 	public Pinguino crearPinguino(Pinguino pingu) {
 		Scanner s = new Scanner(System.in);
 		int identificador = 1;
@@ -81,23 +94,18 @@ private String nombre;
 		return pingu;
 	}
 	
+	public Pinguino avanzarConDado(Pinguino pingu, Dado dado) {
+		
+		pingu.posicion += dado.getValorDado();
+		System.out.println("Has avanzado " + dado.getValorDado() + " casillas!");
 	
+		return pingu;
+	}
+
 	
-	public int getId() {
-		return id;
-	}
 
-	public void setId(int id) {
-		this.id = id;
-	}
 
-	public Inventario getInv() {
-		return inv;
-	}
 
-	public void setInv(Inventario inv) {
-		this.inv = inv;
-	}
 
 	public void avanzar() {
 		this.posicion++;
