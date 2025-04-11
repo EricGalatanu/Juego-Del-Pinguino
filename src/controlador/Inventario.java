@@ -60,23 +60,25 @@ public class Inventario {
 		this.dadosL = dadosL;
 	}
 	
-	public void obtenerPescado(Inventario inventarioJugador) {
+	public Pinguino obtenerPescado(Pinguino pingu) {
 
-		if (inventarioJugador.peces < 2) {
-			peces++;
-			if (inventarioJugador.peces == 1) {
-				System.out.println("Has obtenido un pez! Tienes " + peces + " pez en el inventario");
+		if (pingu.getInventario().getPeces() < 2) {
+			pingu.getInventario().setPeces(getPeces() + 1);
+			if (pingu.getInventario().getPeces() == 1) {
+				System.out.println("Has obtenido un pez! Tienes " + pingu.getInventario().getPeces() + " pez en el inventario");
 			} else {
-				System.out.println("Has obtenido un pez! Tienes " + peces + " peces en el inventario");
+				System.out.println("Has obtenido un pez! Tienes " + pingu.getInventario().getPeces() + " peces en el inventario");
 			}
 
 		} else {
 			System.out.println("Tienes el máximo de peces permitidos, no se ha añadido el pez al inventario.");
 		}
 
+		return pingu;
+		
 	}
 
-	public void obtenerBolasdeNieve(Inventario inventarioJugador) {
+	public void obtenerBolasdeNieve(Pinguino pingu) {
 
 		int generador = r.nextInt(3) + 1;
 
@@ -88,41 +90,34 @@ public class Inventario {
 		}
 
 		// Verifica si tiene el máximo de bolas permitidas.
-		if (inventarioJugador.bolasDeNieve >= 6) {
+		if (pingu.getInventario().getBolasDeNieve() >= 6) {
 			System.out.println("Tienes el máximo de bolas de nieve permitidas.");
 		} else {
 			// Calcula el total después de agregar las bolas generadas.
-			int bolasTotales = inventarioJugador.bolasDeNieve + generador;
+			int bolasTotales = pingu.getInventario().getBolasDeNieve() + generador;
 
 			// Si el total excede el permitido lo actualiza a 6.
 			if (bolasTotales >= 6) {
-				inventarioJugador.bolasDeNieve = 6;
+				pingu.getInventario().setBolasDeNieve() = 6;
 				System.out.println("Tienes el máximo de bolas de nieve permitidas.");
 
 			} else {
 				// Si no excede el total se añaden las generadas y nada más.
-				inventarioJugador.bolasDeNieve = bolasTotales;
+				pingu.getInventario().setBolasDeNieve(bolasTotales);
 			}
 
-			if (inventarioJugador.bolasDeNieve == 1) {
+			if (pingu.getInventario().getBolasDeNieve() == 1) {
 				System.out.println("Tienes 1 bola de nieve en el inventario.");
 
 			} else {
 				// Fuera del bucle y una vez actualizado se muestra el total de bolas
-				System.out.println("Tienes " + inventarioJugador.bolasDeNieve + " bolas de nieve en el inventario.");
+				System.out.println("Tienes " + pingu.getInventario().getBolasDeNieve() + " bolas de nieve en el inventario.");
 			}
 
 		}
-
+		
+		return pingu;	
 	}
 
-//	public static void main(String[] args) {
-//
-//		Inventario invJugador = new Inventario(null, 2, 0);
-//
-//		invJugador.obtenerBolasdeNieve(invJugador);
-//
-//		
-//	}
 
 }
