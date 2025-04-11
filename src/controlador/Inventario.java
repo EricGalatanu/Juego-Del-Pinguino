@@ -4,9 +4,11 @@ import java.util.*;
 
 public class Inventario {
 
+
 	private int dados;
 	private int dadosR;
 	private int dadosL;
+
 	private int peces;
 	private int bolasDeNieve;
 
@@ -16,9 +18,11 @@ public class Inventario {
 		this.dados = dados;
 		this.dadosR = dadosR;
 		this.dadosL = dadosL;
+
 		this.peces = peces;
 		this.bolasDeNieve = bolasDeNieve;
 	}
+
 
 	public int getDados() {
 		return dados;
@@ -26,6 +30,7 @@ public class Inventario {
 
 	public void setDados(int dados) {
 		this.dados = dados;
+
 	}
 
 	public int getPeces() {
@@ -74,6 +79,7 @@ public class Inventario {
 			System.out.println("Tienes el máximo de peces permitidos, no se ha añadido el pez al inventario.");
 		}
 
+
 		return pingu;
 		
 	}
@@ -90,6 +96,7 @@ public class Inventario {
 		}
 
 		// Verifica si tiene el máximo de bolas permitidas.
+
 		if (pingu.getInventario().getBolasDeNieve() >= 6) {
 			System.out.println("Tienes el máximo de bolas de nieve permitidas.");
 		} else {
@@ -98,17 +105,18 @@ public class Inventario {
 
 			// Si el total excede el permitido lo actualiza a 6.
 			if (bolasTotales >= 6) {
-				pingu.getInventario().setBolasDeNieve() = 6;
+				pingu.getInventario().setBolasDeNieve(6);
 				System.out.println("Tienes el máximo de bolas de nieve permitidas.");
+			
+		} else {
 
-			} else {
 				// Si no excede el total se añaden las generadas y nada más.
 				pingu.getInventario().setBolasDeNieve(bolasTotales);
 			}
 
 			if (pingu.getInventario().getBolasDeNieve() == 1) {
 				System.out.println("Tienes 1 bola de nieve en el inventario.");
-
+				
 			} else {
 				// Fuera del bucle y una vez actualizado se muestra el total de bolas
 				System.out.println("Tienes " + pingu.getInventario().getBolasDeNieve() + " bolas de nieve en el inventario.");

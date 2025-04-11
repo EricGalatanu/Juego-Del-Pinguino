@@ -8,7 +8,7 @@ public class Evento {
 	public Evento (int idEvento, String infoEvento) {
 		this.idEvento = idEvento;
 		this.infoEvento = infoEvento;
-		
+
 	}
 	
 	public int getIDEvento() {
@@ -30,3 +30,4 @@ public class Evento {
 
 	
 }
+
