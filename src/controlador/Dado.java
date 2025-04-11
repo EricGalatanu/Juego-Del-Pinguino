@@ -83,16 +83,6 @@ public class Dado {
 
 		return dadoActual;
 	}
-	
-//	public static void main(String[] args) {
-//		Dado dadoActual = new Dado("", 0);
-//		
-//		dadoActual.lanzar(dadoActual);
-//		
-//		
-//		System.out.println("Tipo de dado: " + dadoActual.tipo);
-//		System.out.println("Valor del dado: " + dadoActual.valor);
-//		
-//	}
+
 
 }
