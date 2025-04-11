@@ -1,17 +1,19 @@
 package modelo;
 import java.util.ArrayList;
 import java.util.Random;
+
+import testRepte.Evento;
 public class Tablero {
 
 	private int numeroCasillas;
-	private ArrayList<Evento> tableroCasillas = new ArrayList<>();
+	private ArrayList<Evento> casillas = new ArrayList<>();
 
 	public Tablero (int numeroCasillas) {
 	this.numeroCasillas = 50;
-	this.tableroCasillas = tableroCasillas;
+	this.casillas = casillas;
 	}
 
-	public void setnumeroCasillas(String numeroCasillas){
+	public void setNumeroCasillas(String numeroCasillas){
 		this.numeroCasillas = 50;
 		}
 
@@ -19,6 +21,14 @@ public class Tablero {
 		return numeroCasillas;
 	}
 	
+	public ArrayList<Evento> getCasillas() {
+		return casillas;
+	}
+
+	public void setCasillas(ArrayList<Evento> casillas) {
+		this.casillas = casillas;
+	}
+
 	public Tablero creacionTablero () {
 		int generador = 0;
 		Evento evt = null;
@@ -27,10 +37,13 @@ public class Tablero {
 		int contadorCasillas = 0;
 		int casillasVacias = 0;
 		
-		while (contadorCasillas < 50) {
+		casillas.add(evt);
+		casillas.add(evt);
+		
+		while (contadorCasillas < 49) {
 			generador = r.nextInt(15) + 1; 
 			
-			
+		
 			switch (generador) {
 			case 1:
 				evt = new Evento(1, "Casilla vacía");
@@ -53,19 +66,16 @@ public class Tablero {
 				evt = new Evento (4, "Trineo");
 				break;
 			case 5:
-				evt = new Evento (5, "Moto de Nieve");
-				break;
-			case 6:
-				evt = new Evento (6, "Interrogante");
+				evt = new Evento (5, "Interrogante");
 				break;
 			case 7:
-				evt = new Evento (7, "Obtener Pez");
+				evt = new Evento (6, "Obtener Pez");
 				break;
 			case 8:
-				evt = new Evento (8, "Obtener bolas de nieve");
+				evt = new Evento (7, "Obtener bolas de nieve");
 				break;
 			case 9:
-				evt = new Evento (9, "Obtener dado");
+				evt = new Evento (8, "Obtener dado");
 				break;
 			default:
 				if (casillasVacias < 25) {
@@ -77,10 +87,11 @@ public class Tablero {
 			
 			}
 			
-			tableroCasillas.add(evt);
+			casillas.add(evt);
 			contadorCasillas++;
 			
 		}
+		return casillas;
 	}
 
 	
