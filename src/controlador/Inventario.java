@@ -1,5 +1,5 @@
 package controlador;
-
+import modelo.*;
 import java.util.*;
 
 public class Inventario {
@@ -8,7 +8,6 @@ public class Inventario {
 	private int dados;
 	private int dadosR;
 	private int dadosL;
-
 	private int peces;
 	private int bolasDeNieve;
 
@@ -84,7 +83,7 @@ public class Inventario {
 		
 	}
 
-	public void obtenerBolasdeNieve(Pinguino pingu) {
+	public Pinguino obtenerBolasdeNieve(Pinguino pingu) {
 
 		int generador = r.nextInt(3) + 1;
 

@@ -1,8 +1,8 @@
 package modelo;
+import controlador.*;
 import java.util.ArrayList;
 import java.util.Random;
 
-import testRepte.Evento;
 public class Tablero {
 
 	private int numeroCasillas;
@@ -29,7 +29,7 @@ public class Tablero {
 		this.casillas = casillas;
 	}
 
-	public Tablero creacionTablero () {
+	public ArrayList<Evento> creacionTablero () {
 		int generador = 0;
 		Evento evt = null;
 		int contadorOso = 0;

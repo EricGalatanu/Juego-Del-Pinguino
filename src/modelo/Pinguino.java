@@ -1,22 +1,22 @@
 package modelo;
 
 import java.util.Scanner;
-
+import controlador.*;
 public class Pinguino {
 
 private String nombre;
-	public String color;
-	public int posicion;
+	private String color;
+	private int posicion;
 	private int id;
-	public Inventario inv;
-	public String tipo;
+	private Inventario inventario;
+	private String tipo;
 	
-	public Pinguino (String nombre, String color, int id, int posicion, Inventario inv, String tipo) {
+	public Pinguino (String nombre, String color, int id, int posicion, Inventario inventario, String tipo) {
 		this.nombre = nombre;
 		this.color = color;
 		this.id = id;
 		this.posicion = 0;
-		this.inv = inv;
+		this.inventario = inventario;
 		this.tipo = tipo;
 	}
 	
@@ -61,21 +61,22 @@ private String nombre;
 		this.tipo = tipo;
 	}
 	
-	public Inventario getInv() {
-		return inv;
+	public Inventario getInventario() {
+		return inventario;
 	}
 
-	public void setInv(Inventario inv) {
-		this.inv = inv;
+	public void setInventario(Inventario inv) {
+		this.inventario = inv;
 	}
 	
+
 	public Pinguino crearPinguino(Pinguino pingu) {
 		Scanner s = new Scanner(System.in);
 		int identificador = 1;
 		String nombre = "";
 		String color = "";
 		int posicion = 0;
-		Inventario inv = new Inventario(0, 0, 0);
+		Inventario inv = new Inventario(0, 0, 0, 0, 0);
 		String tipo = "Jugador";
 		System.out.println("Introduzca su nombre");
 		nombre = s.nextLine();
@@ -103,10 +104,6 @@ private String nombre;
 	}
 
 	
-
-
-
-
 	public void avanzar() {
 		this.posicion++;
 	}
