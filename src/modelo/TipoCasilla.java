@@ -83,7 +83,7 @@ public class TipoCasilla extends Casilla {
 		return pingu;
 	}
 
-	public Pinguino casillaAgujeroHielo (Pinguino pingu, ArrayList<Evento> casillas) {
+	public void casillaAgujeroHielo (Pinguino pingu, ArrayList<Evento> casillas) {
 		int agujeroActual = pingu.getPosicion();
 		int agujeroAnterior = 0;
 		boolean agujeroAnteriorEncontrado = false;
@@ -105,10 +105,9 @@ public class TipoCasilla extends Casilla {
 	} else if (agujeroAnterior == 0){
 		System.out.println("No se ha encontrado ningún agujero anterior a este, no has sido penalizado");
 	}
-		return pingu;
 	}
 	
-	public Pinguino casillaTrineo (Pinguino pingu, ArrayList<Evento> casillas) {
+	public void casillaTrineo (Pinguino pingu, ArrayList<Evento> casillas) {
 		int trineoActual = pingu.getPosicion();
 		int trineoSiguiente = 0;
 		boolean trineoPosteriorEncontrado = false;
@@ -134,11 +133,10 @@ public class TipoCasilla extends Casilla {
 
 		
 			
-		return pingu;
 	}
 	
-	public static Pinguino accionInterrogante(Pinguino pingu) {
-	
+	public static void accionInterrogante(Pinguino pingu) {
+		Inventario inv = new Inventario (0, 0, 0, 0, 0);
 		Random random = new Random();
 		
 		System.out.println("¡Jugador " + pingu.getNombre() + " ha activado una casilla de interrogante!");
@@ -147,11 +145,12 @@ public class TipoCasilla extends Casilla {
         switch (esdeveniment) { 
             case 0:
                 System.out.println("¡Jugador " + pingu.getNombre() + "ha obtenido un pez!");
-                pingu.obtenerPescado(pingu);
+                inv.obtenerPescado(pingu);
+                
                 break;
             case 1:
                 System.out.println("¡Jugador " + pingu.getNombre() + "ha obtenido una/s bola de nieve!");
-                pingu.obtenerBolasdeNieve(pingu.inv);
+                inv.obtenerBolasdeNieve(pingu);
                 break;
             case 2:
  
@@ -164,7 +163,7 @@ public class TipoCasilla extends Casilla {
                      if (pingu.getInventario().getDados() >= 3) {
                     	 System.out.println("No se pueden añadir más dados al inventario");
                      } else {
-                    	 
+                    	 pingu.getInventario().setDados(pingu.getInventario().getDados() + 1);
                      }
                      break;
             	case 2:
@@ -201,7 +200,6 @@ public class TipoCasilla extends Casilla {
             	}
                break;      	
         }
-		return pingu;
 	}
 	
 	public Pinguino obtenerPescado(Pinguino pingu) {

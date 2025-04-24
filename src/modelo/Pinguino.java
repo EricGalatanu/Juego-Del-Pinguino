@@ -70,7 +70,7 @@ private String nombre;
 	}
 	
 
-	public Pinguino crearPinguino(Pinguino pingu) {
+	public void crearPinguino(Pinguino pingu) {
 		Scanner s = new Scanner(System.in);
 		int identificador = 1;
 		String nombre = "";
@@ -92,24 +92,16 @@ private String nombre;
 
 		System.out.println("Se ha creado su pingüino correctamente!");
 		
-		return pingu;
 	}
 	
-	public Pinguino avanzarConDado(Pinguino pingu, Dado dado) {
+	public void avanzarConDado(Pinguino pingu, Dado dado) {
 		
-		pingu.posicion += dado.getValorDado();
+		
+		pingu.setPosicion(getPosicion() + dado.getValorDado()); 
 		System.out.println("Has avanzado " + dado.getValorDado() + " casillas!");
-	
-		return pingu;
+		
 	}
 
 	
-	public void avanzar() {
-		this.posicion++;
-	}
-	
-	public void retroceder() {
-		this.posicion--;
-	}
 	
 }

@@ -64,7 +64,7 @@ public class Inventario {
 		this.dadosL = dadosL;
 	}
 	
-	public Pinguino obtenerPescado(Pinguino pingu) {
+	public void obtenerPescado(Pinguino pingu) {
 
 		if (pingu.getInventario().getPeces() < 2) {
 			pingu.getInventario().setPeces(getPeces() + 1);
@@ -77,13 +77,10 @@ public class Inventario {
 		} else {
 			System.out.println("Tienes el máximo de peces permitidos, no se ha añadido el pez al inventario.");
 		}
-
-
-		return pingu;
 		
 	}
 
-	public Pinguino obtenerBolasdeNieve(Pinguino pingu) {
+	public void obtenerBolasdeNieve(Pinguino pingu) {
 
 		int generador = r.nextInt(3) + 1;
 
@@ -123,8 +120,16 @@ public class Inventario {
 
 		}
 		
-		return pingu;	
+		//return pingu;	
 	}
 
-
+	public static void main(String[] args) {
+		Pinguino pingu = new Pinguino ("", "", 1, 0, null, "");
+		Inventario inv = new Inventario (0, 0, 0, 0, 0);
+		pingu.crearPinguino(pingu);
+		
+		inv.obtenerBolasdeNieve(pingu);
+		
+		System.out.println(pingu.getInventario().getBolasDeNieve());
+	}
 }
