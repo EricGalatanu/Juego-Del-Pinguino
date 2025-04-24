@@ -17,8 +17,8 @@ public class bbdd {
      * @return Objeto Connection si la conexión es exitosa, null en caso contrario. LA VARIABLE QUE DEVUELVE
      * LA TENEIS QUE GUARDAR PARA LAS DEMÁS FUNCIONES
      */
-	public static Connection conectarBaseDatos(Connection con) {
-
+	public static Connection conectarBaseDatos() {
+		Connection con = null;
 		System.out.println("Intentando conectarse a la base de datos");
 		
 		System.out.println("Selecciona centro o fuera de centro: (CENTRO/FUERA)");
@@ -38,14 +38,15 @@ public class bbdd {
 		}
 		
 		System.out.println("¿Usuario?");
-		String USER = scan.nextLine();
+		String USER = "DW2425_PIN_GRUP04";
 		
 		System.out.println("¿Contraseña?");
-		String PWD = scan.nextLine();
+		String PWD = "AACVV04";
 		
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			con = DriverManager.getConnection(URL, USER, PWD);
+			System.out.println("Conectando...");
 		} catch (ClassNotFoundException e) {
 			System.out.println("No se ha encontrado el driver " + e);
 		} catch (SQLException e) {

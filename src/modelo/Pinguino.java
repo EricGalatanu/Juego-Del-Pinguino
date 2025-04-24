@@ -70,11 +70,10 @@ private String nombre;
 	}
 	
 
-	public void crearPinguino(Pinguino pingu, Connection con) {
+	public void crearPinguino(Pinguino pingu, Connection con, bbdd sentencias) {
 		Scanner s = new Scanner(System.in);
-		int identificador = 1;
-		String nombre = "";
-		String color = "";
+		String nombre;
+		String color;
 		int posicion = 0;
 		Inventario inv = new Inventario(0, 0, 0, 0, 0);
 		String tipo = "Jugador";
@@ -85,11 +84,15 @@ private String nombre;
 
 		pingu.setNombre(nombre);
 		pingu.setColor(color);
-		pingu.setId(identificador);
 		pingu.setPosicion(posicion);
 		pingu.setInventario(inv);
 		pingu.setTipo(tipo);
 
+		String sql = "INSERT INTO JUGADOR (ID_JUGADOR, NICKNAME, CONTRASENYA, NUM_PARTIDAS_JUGADAS) " +
+	             "VALUES (idJugadores.NEXTVAL, '" + nombre + "', '" + color + "', 0)";
+		
+		sentencias.insert(con, sql);
+		
 		System.out.println("Se ha creado su pingüino correctamente!");
 		
 	}
