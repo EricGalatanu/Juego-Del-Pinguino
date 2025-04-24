@@ -123,13 +123,4 @@ public class Inventario {
 		//return pingu;	
 	}
 
-	public static void main(String[] args) {
-		Pinguino pingu = new Pinguino ("", "", 1, 0, null, "");
-		Inventario inv = new Inventario (0, 0, 0, 0, 0);
-		pingu.crearPinguino(pingu);
-		
-		inv.obtenerBolasdeNieve(pingu);
-		
-		System.out.println(pingu.getInventario().getBolasDeNieve());
-	}
 }

@@ -1,5 +1,5 @@
 package modelo;
-
+import java.sql.*;
 import java.util.Scanner;
 import controlador.*;
 public class Pinguino {
@@ -70,7 +70,7 @@ private String nombre;
 	}
 	
 
-	public void crearPinguino(Pinguino pingu) {
+	public void crearPinguino(Pinguino pingu, Connection con) {
 		Scanner s = new Scanner(System.in);
 		int identificador = 1;
 		String nombre = "";
@@ -95,7 +95,6 @@ private String nombre;
 	}
 	
 	public void avanzarConDado(Pinguino pingu, Dado dado) {
-		
 		
 		pingu.setPosicion(getPosicion() + dado.getValorDado()); 
 		System.out.println("Has avanzado " + dado.getValorDado() + " casillas!");
